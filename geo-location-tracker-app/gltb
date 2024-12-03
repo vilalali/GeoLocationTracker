@@ -1,0 +1,20 @@
+geo-location-tracker-app
+├── App.js
+├── app.json
+├── assets
+│ ├── adaptive-icon.png
+│ ├── favicon.png
+│ ├── icon.png
+│ └── splash-icon.png
+├── gltb
+├── index.js
+├── package.json
+├── package-lock.json
+└── src
+    ├── AppNavigator.js
+    ├── components
+    │ └── controler.js
+    └── screens
+        ├── LocationTracker.js
+        └── RegistrationScreen.js
+

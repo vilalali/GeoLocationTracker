@@ -1,0 +1,15 @@
+geo-location-tracker-backend
+├── config
+│ └── db.js
+├── gltb
+├── models
+│ ├── location.js
+│ └── user.js
+├── package.json
+├── package-lock.json
+├── routes
+│ ├── locationRoutes.js
+│ └── userRoutes.js
+└── server.js
+
+284 directories, 1669 files

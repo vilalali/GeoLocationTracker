@@ -1,8 +1,9 @@
 {
   "expo": {
-    "name": "GeoLocationTracker",
-    "slug": "GeoLocationTracker",
+    "name": "geolocationtracker-app",
+    "slug": "geolocationtracker-app",
     "version": "1.0.0",
+    "platforms": ["ios", "android", "web"],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -23,6 +24,10 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "API_URL": "http://10.1.42.130:3001"
     }
   }
 }
+

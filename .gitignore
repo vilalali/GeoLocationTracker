@@ -1,7 +1,8 @@
 # Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
 # dependencies
-node_modules/
+geo-location-tracker-backend/node_modules/
+geo-location-tracker-app/node_modules/
 
 # Expo
 .expo/
