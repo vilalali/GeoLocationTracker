@@ -8,7 +8,7 @@ const locationRoutes = require('./routes/locationRoutes');
 const loginRoutes = require('./routes/authRoutes');
 const User = require('./models/user');
 const LocationHistory = require('./models/location');
-const { API_URL } = require('../../creds');
+
 
 // Initialize the app
 const app = express();
