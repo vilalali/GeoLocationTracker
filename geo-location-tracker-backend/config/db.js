@@ -7,7 +7,7 @@ const sequelize = new Sequelize(
   process.env.MYSQL_USER || 'dfs', // Database username
   process.env.MYSQL_PASSWORD || 'password', // Database password
   {
-    host: process.env.MYSQL_HOST || '10.1.42.130' || `192.168.0.102',
+    host: process.env.MYSQL_HOST,
     dialect: 'mysql', // Database dialect
     logging: false, // Disable logging of SQL queries (optional)
   }

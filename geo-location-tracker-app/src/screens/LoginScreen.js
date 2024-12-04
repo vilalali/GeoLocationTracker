@@ -7,7 +7,7 @@ export default function LoginScreen({ navigation }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    const API_URL = Constants.expoConfig?.extra?.API_URL || 'http://10.1.42.130:3001';
+    const API_URL = Constants.expoConfig?.extra?.API_URL || 'http://10.1.42.130:3001' || 'http://192.168.0.102:3001';
 
     const handleLogin = async () => {
         if (!username || !password) {
