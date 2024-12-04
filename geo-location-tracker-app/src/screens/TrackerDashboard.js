@@ -4,7 +4,7 @@ import * as Location from 'expo-location';
 import axios from 'axios';
 import Constants from 'expo-constants';
 
-const API_URL = Constants.manifest?.extra?.API_URL || 'http://10.1.42.130:3001';
+const API_URL = Constants.manifest?.extra?.API_URL || 'http://10.1.42.130:3001' || 'http://192.168.0.102:3001';
 
 const TrackerDashboard = ({ route, navigation }) => {
     const { vehicleId, userName, vehicleType } = route.params || {}; // Get vehicleId, userName, and vehicleType from params

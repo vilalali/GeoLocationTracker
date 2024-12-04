@@ -32,5 +32,5 @@ app.use('/api/login', loginRoutes);
 // Start Server
 const PORT = 3001;
 app.listen(PORT, () => {
-  console.log(`Server running on http://10.1.42.130:${PORT}`);
+  console.log(`Server running on || 'http://192.168.0.102:${PORT}`);
 });
