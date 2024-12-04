@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Alert } from 'react-native';
+import { View, Text, Button, Alert, StyleSheet } from 'react-native';
 import * as Location from 'expo-location';
 import axios from 'axios';
 import Constants from 'expo-constants';
 
 const API_URL = Constants.manifest?.extra?.API_URL || 'http://10.1.42.130:3001';
 
-const TrackerDashboard = ({ route }) => {
-    const { vehicleId } = route.params || {}; // Get vehicleId from params
+const TrackerDashboard = ({ route, navigation }) => {
+    const { vehicleId, userName, vehicleType } = route.params || {}; // Get vehicleId, userName, and vehicleType from params
     const [location, setLocation] = useState(null);
+    const [intervalId, setIntervalId] = useState(null);
 
     useEffect(() => {
         if (!vehicleId) {
@@ -23,7 +24,8 @@ const TrackerDashboard = ({ route }) => {
                 return;
             }
 
-            const intervalId = setInterval(async () => {
+            // Start location tracking interval
+            const id = setInterval(async () => {
                 const { coords } = await Location.getCurrentPositionAsync({});
                 setLocation(coords);
 
@@ -40,18 +42,41 @@ const TrackerDashboard = ({ route }) => {
                 }
             }, 10000); // Send location every 10 seconds
 
-            return () => clearInterval(intervalId); // Cleanup on unmount
+            setIntervalId(id); // Save interval ID to clear it later
+            return () => clearInterval(id); // Cleanup on unmount
         })();
     }, [vehicleId]);
 
+    // Handle Logout
+    const handleLogout = () => {
+        // Clear interval to stop location tracking
+        if (intervalId) {
+            clearInterval(intervalId);
+            console.log('Location tracking stopped');
+        }
+
+        // You can clear any session or local data if needed here (e.g., clear vehicleId, userName)
+
+        // Navigate to the home screen
+        navigation.navigate('Home'); 
+    };
+
     return (
-        <View>
-            <Text>Tracking for Vehicle ID: {vehicleId}</Text>
+        <View style={styles.container}>
+            <Text style={styles.title}>Tracking for Vehicle ID: {vehicleId}</Text>
+            <Text>User: {userName}</Text>
+            <Text>Vehicle Type: {vehicleType}</Text>
             {location && (
                 <Text>{`Latitude: ${location.latitude}, Longitude: ${location.longitude}`}</Text>
             )}
+            <Button title="Logout" onPress={handleLogout} color="#d9534f" />
         </View>
     );
 };
+
+const styles = StyleSheet.create({
+    container: { flex: 1, padding: 20, justifyContent: 'center', alignItems: 'center' },
+    title: { fontSize: 24, fontWeight: 'bold', marginBottom: 20 },
+});
 
 export default TrackerDashboard;

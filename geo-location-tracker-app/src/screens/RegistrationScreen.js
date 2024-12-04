@@ -69,16 +69,22 @@ export default function RegistrationScreen({ navigation }) {
                 secureTextEntry
                 onChangeText={setPassword}
             />
-            <Button
-                title={isLoading ? "Registering..." : "Register and Start Tracking"}
-                onPress={handleRegistration}
-                disabled={isLoading}
-            />
-            <Button
-                title="Already registered? Login"
-                onPress={() => navigation.navigate('Login')}
-                disabled={isLoading}
-            />
+           <View style={styles.buttonContainer}>
+                <Button
+                    title={isLoading ? "Registering..." : "Register and Start Tracking"}
+                    onPress={handleRegistration}
+                    disabled={isLoading}
+                    color="#007BFF"  // Primary button color
+                />
+            </View>
+            <View style={styles.buttonContainer}>
+                <Button
+                    title="Already registered? Login"
+                    onPress={() => navigation.navigate('Login')}
+                    disabled={isLoading}
+                    color="#6c757d"  // Secondary button color
+                />
+            </View>
         </View>
     );
 }
@@ -103,5 +109,9 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         marginBottom: 20,
         width: '100%',
+    },
+    buttonContainer: {
+        width: '100%',
+        marginTop: 15,
     },
 });
