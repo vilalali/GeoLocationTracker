@@ -8,6 +8,7 @@ const locationRoutes = require('./routes/locationRoutes');
 const loginRoutes = require('./routes/authRoutes');
 const User = require('./models/user');
 const LocationHistory = require('./models/location');
+const { API_URL } = require('../../creds');
 
 // Initialize the app
 const app = express();
@@ -32,5 +33,5 @@ app.use('/api/login', loginRoutes);
 // Start Server
 const PORT = 3001;
 app.listen(PORT, () => {
-  console.log(`Server running on || 'http://192.168.0.102:${PORT}`);
+  console.log(`Server running on || 'localhost:${PORT}`);
 });

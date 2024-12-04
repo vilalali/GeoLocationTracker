@@ -9,7 +9,7 @@ export default function RegistrationScreen({ navigation }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    const API_URL = Constants.expoConfig?.extra?.API_URL || 'http://10.1.42.130:3001' || 'http://192.168.0.102:3001'; // Default fallback URL
+    const { API_URL } = require('../../creds');
 
     const handleRegistration = async () => {
         if (!vehicleId || !vehicleType || !username || !password) {
