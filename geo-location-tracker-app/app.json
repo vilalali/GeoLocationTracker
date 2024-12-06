@@ -3,7 +3,11 @@
     "name": "geolocationtracker-app",
     "slug": "geolocationtracker-app",
     "version": "1.0.0",
-    "platforms": ["ios", "android", "web"],
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "orientation": "portrait",
     "icon": "./assets/logo.png",
     "userInterfaceStyle": "light",
@@ -20,14 +24,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.vilalali.geolocationtrackerapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
-      "API_URL": "http://10.2.219.131:3001"
+      "API_URL": "http://10.2.219.131:3001",
+      "eas": {
+        "projectId": "69039446-de81-436f-8225-1b007451d000"
+      }
     }
   }
 }
-
