@@ -21,7 +21,7 @@ export default function RegistrationScreen({ navigation }) {
         try {
             console.log("Attempting to register:", { vehicleId, vehicleType, username });
 
-            const response = await axios.post(`${API_URL}/api/users/register`, {
+            const response = await axios.post(`${API_URL}/api/register/user-signup`, {
                 vehicleId,
                 vehicleType,
                 username,

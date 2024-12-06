@@ -47,7 +47,7 @@ function AppTabs() {
                 tabBarIcon: ({ color, size }) => {
                     let iconName;
 
-                    if (route.name === 'Home') {
+                    if (route.name === 'Home adas') {
                         iconName = 'home-outline';
                     } else if (route.name === 'Menu') {
                         iconName = 'menu-outline';
@@ -72,7 +72,7 @@ function AppTabs() {
                 options={{ tabBarLabel: '' }}
             />
             <Tab.Screen
-                name="Home"
+                name="Profile"
                 component={MainStack}
                 options={{ tabBarLabel: '' }}
             />

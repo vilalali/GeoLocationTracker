@@ -30,6 +30,7 @@
     "react-native-bootstrap-styles": "^4.5.0-r",
     "react-native-geolocation-service": "^5.3.1",
     "react-native-gesture-handler": "~2.20.2",
+    "react-native-paper": "^5.12.5",
     "react-native-reanimated": "^3.16.3",
     "react-native-safe-area-context": "^4.14.0",
     "react-native-screens": "~4.1.0",

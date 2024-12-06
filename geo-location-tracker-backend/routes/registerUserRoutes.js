@@ -5,7 +5,7 @@ const router = express.Router();
 const User = require('../models/user');
 
 // Register User
-router.post('/register', async (req, res) => {
+router.post('/user-signup', async (req, res) => {
     try {
         const { username, vehicleId, vehicleType, password } = req.body;
 
@@ -31,32 +31,6 @@ router.post('/register', async (req, res) => {
     }
 });
 
-// Login User
-router.post('/login', async (req, res) => {
-    try {
-        const { username, password } = req.body;
 
-        if (!username || !password) {
-            return res.status(400).json({ error: 'All fields are required' });
-        }
-
-        // Find the user by username
-        const user = await User.findOne({ where: { username } });
-        if (!user) {
-            return res.status(404).json({ error: 'User not found' });
-        }
-
-        // Compare the password
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) {
-            return res.status(401).json({ error: 'Invalid credentials' });
-        }
-
-        res.status(200).json({ message: 'Login successful', vehicleId: user.vehicleId });
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: err.message });
-    }
-});
 
 module.exports = router;

@@ -17,10 +17,15 @@ export default function LoginScreen({ navigation }) {
 
         setIsLoading(true);
         try {
-            const response = await axios.post(`${API_URL}/api/users/login`, { username, password });
+            const response = await axios.post(`${API_URL}/api/login/user-login`, { username, password });
 
             Alert.alert('Success', 'Login successful!');
-            navigation.navigate('TrackerDashboard', { username, vehicleId: response.data.vehicleId }); // Pass user info to dashboard
+            navigation.navigate('TrackerDashboard', {
+                username: response.data.username,
+                vehicleId: response.data.vehicleId,
+                vehicleType: response.data.vehicleType,  // Pass vehicleType as well
+            });
+            
         } catch (err) {
             console.error('Error:', err.message);
             Alert.alert('Error', 'Invalid credentials. Please try again.');
