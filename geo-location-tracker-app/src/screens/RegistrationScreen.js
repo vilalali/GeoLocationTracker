@@ -9,7 +9,7 @@ export default function RegistrationScreen({ navigation }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    const API_URL = Constants.expoConfig?.extra?.API_URL || 'http://10.1.42.130:3001'; // Default fallback URL
+    const { API_URL } = require('../../creds');
 
     const handleRegistration = async () => {
         if (!vehicleId || !vehicleType || !username || !password) {
@@ -21,7 +21,7 @@ export default function RegistrationScreen({ navigation }) {
         try {
             console.log("Attempting to register:", { vehicleId, vehicleType, username });
 
-            const response = await axios.post(`${API_URL}/api/users/register`, {
+            const response = await axios.post(`${API_URL}/api/register/user-signup`, {
                 vehicleId,
                 vehicleType,
                 username,
@@ -69,16 +69,22 @@ export default function RegistrationScreen({ navigation }) {
                 secureTextEntry
                 onChangeText={setPassword}
             />
-            <Button
-                title={isLoading ? "Registering..." : "Register and Start Tracking"}
-                onPress={handleRegistration}
-                disabled={isLoading}
-            />
-            <Button
-                title="Already registered? Login"
-                onPress={() => navigation.navigate('Login')}
-                disabled={isLoading}
-            />
+           <View style={styles.buttonContainer}>
+                <Button
+                    title={isLoading ? "Registering..." : "Register and Start Tracking"}
+                    onPress={handleRegistration}
+                    disabled={isLoading}
+                    color="#007BFF"  // Primary button color
+                />
+            </View>
+            <View style={styles.buttonContainer}>
+                <Button
+                    title="Already registered? Login"
+                    onPress={() => navigation.navigate('Login')}
+                    disabled={isLoading}
+                    color="#6c757d"  // Secondary button color
+                />
+            </View>
         </View>
     );
 }
@@ -103,5 +109,9 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         marginBottom: 20,
         width: '100%',
+    },
+    buttonContainer: {
+        width: '100%',
+        marginTop: 15,
     },
 });
