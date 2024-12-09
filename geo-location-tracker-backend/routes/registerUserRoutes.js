@@ -9,6 +9,9 @@ router.post('/user-signup', async (req, res) => {
     try {
         const { username, vehicleId, vehicleType, password } = req.body;
 
+        // Log the input data to the console
+        console.log('User signup input:', { username, vehicleId, vehicleType, password });
+
         if (!username || !vehicleId || !vehicleType || !password) {
             return res.status(400).json({ error: 'All fields are required' });
         }
@@ -30,7 +33,5 @@ router.post('/user-signup', async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 });
-
-
 
 module.exports = router;

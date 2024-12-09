@@ -3,12 +3,12 @@ import { View, AppState } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import Header from './src/components/Header';
 import AppTabs from './src/navigation/AppTabs';
-import configureBackgroundFetch from './src/BackgroundService'; // Import the background service
+// import configureBackgroundFetch from './src/BackgroundService'; // Import the background service
 
 export default function App() {
     useEffect(() => {
         // Configure background fetch when the app is mounted
-        configureBackgroundFetch();
+        // configureBackgroundFetch();
 
         // Optional: Handle app state changes (background, foreground, etc.)
         const handleAppStateChange = (nextAppState) => {
