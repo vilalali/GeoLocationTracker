@@ -103,42 +103,72 @@
    npm start
    ```
 
-### Mobile App Setup
-1. **Install Dependencies**:  
-   ```bash
-   cd mobile-app
-   npm install
-   ```
+# Full Setup Guide: Mobile & Web UI
 
-2. **Install React Native CLI**:  
-   ```bash
-   npm install -g react-native-cli
-   ```
+## 1. Setting Up a New React Native App
 
-3. **Run the Mobile App**:  
-   - For Android:  
-     ```bash
-     react-native run-android
-     ```  
-   - For iOS:  
-     ```bash
-     react-native run-ios
-     ```
+### Prerequisites
+Ensure you have Node.js installed. You can download it from [nodejs.org](https://nodejs.org/).
 
-### Web UI Setup
-1. **Install Dependencies**:  
-   ```bash
-   cd web-ui
-   npm install
-   ```
+### Install Expo CLI
+```sh
+npm install -g expo-cli
+```
 
-2. **Run the Web UI**:  
-   ```bash
-   npm start
-   ```
+### Create a New Expo App
+```sh
+npx create-expo-app mobile-app
+```
+Replace `mobile-app` with your desired project name.
 
-3. **Access the Web UI**:  
-   - Open `http://localhost:3000` in your browser.  
+### Navigate to the Project Directory
+```sh
+cd mobile-app
+```
+
+### Install Dependencies
+```sh
+npm install
+```
+
+### Run the Mobile App
+
+#### For Android:
+```sh
+npx expo start
+```
+- Scan the QR code using the Expo Go app on your Android device.
+
+#### For iOS:
+```sh
+npx expo start
+```
+- Open the Expo Go app on your iOS device and scan the QR code.
+
+#### Running on a Web Browser (Optional)
+Expo also supports running your app in a browser:
+```sh
+npx expo start --web
+```
+Open [http://localhost:19006](http://localhost:19006) to see your app.
+
+---
+
+## 2. Web UI Setup
+
+### Install Dependencies
+```sh
+cd web-ui
+npm install
+```
+
+### Run the Web UI
+```sh
+npm start
+```
+
+### Access the Web UI
+- Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
