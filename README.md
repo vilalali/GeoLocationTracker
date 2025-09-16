@@ -217,6 +217,5 @@ Feel free to fork the repository, make your changes, and submit a pull request.
 ## Author
 
 **Vilal Ali**  
-[vilal.ali@research.iiit.ac.in](mailto:vilal.ali@research.iiit.ac.in)
-
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vilal-ali/)
 ---
