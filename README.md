@@ -1,6 +1,4 @@
 # Real-time Vehicle Geolocation Tracker (MERN Stack)
-It provides a full-stack solution demonstrating how to register vehicles, capture their geographic location periodically using a mobile application, and display this historical data on a web-based dashboard.
-
 [![MongoDB](https://img.shields.io/badge/MongoDB-4.0%2B-47A248.svg?logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 [![Express.js](https://img.shields.io/badge/Express.js-4.x-000000.svg?logo=express&logoColor=white)](https://expressjs.com/)
 [![React](https://img.shields.io/badge/React-18.x-61DAFB.svg?logo=react&logoColor=white)](https://react.dev/)
